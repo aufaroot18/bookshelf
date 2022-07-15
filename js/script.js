@@ -153,7 +153,7 @@ const saveBooksToStorage = () => {
 const loadBooksFromStorage = () => {
   const serializedData = localStorage.getItem(STORAGE_KEY);
   const data = JSON.parse(serializedData);
-  books.push(...data);
+  data && books.push(...data);
   dispatchEvent(RENDER_BOOKS_EVENT);
 };
 
